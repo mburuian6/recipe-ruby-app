@@ -1,0 +1,31 @@
+<h1>SearchResults</h1>
+
+    <table>
+    <thead>
+        <tr>
+        <th>Title</th>
+        <th>Ingredients</th>
+        <th>Procedure</th>
+        <th>Serves</th>
+        <th>User</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+      <% @posts.each do |post| %>
+        <tr>
+          <td><%= link_to post.title, post_path(post.id) %></td>
+          <td><%= post.ingredients %></td>
+          <td><%= post.procedure %></td>
+          <td><%= post.serves %></td>
+          <td><%= post.user %></td>
+      </tr>
+    <% end %>
+        
+        
+    </tbody>
+    </table>
+
+<%= link_to 'Home', display_posts_path %>
+<%= link_to 'Back to Search', search_path %>

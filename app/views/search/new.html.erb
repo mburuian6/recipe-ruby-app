@@ -1,0 +1,20 @@
+<section>
+  
+  <% if flash[:alert] %>
+    <aside> <%= flash[:alert] %> </aside>
+  <% end %>
+  
+  <%= form_tag do %>
+    <h2> Search Post</h2>
+  
+    <div>
+    <%= label_tag :title, 'Enter title to Search' %>
+    <%= text_field_tag :title, params[:title] %>
+    </div>
+
+    <div> 
+      <%= submit_tag "Search" %>
+    </div>
+  <% end %>
+  
+</section>

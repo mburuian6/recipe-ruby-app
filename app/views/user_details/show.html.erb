@@ -1,0 +1,32 @@
+<h1>User Profile</h1> <br/>
+<%= current_user.name %> <br/>
+<%= current_user.user_name %> <br/>
+
+<% if is_profile_owner(@user) %>
+  <%= link_to 'Edit Profile', 
+          edit_user_registration_path, :class => 'navbar-link' %>
+<% end %> <&nbsp>
+<%= link_to 'Home', posts_path %> <br/>
+
+
+<% if @posts.blank? %>
+  0 posts.
+<% else %>
+  <br/>
+  <h2>Posts:</h2>
+<% end %>
+
+
+<table>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= link_to post.title, post_path(post.id) %></td>
+        <td><%= truncate (strip_tags(post.procedure))%></td>
+        <td><i>Created at: <%= post.created_at %> </i></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
