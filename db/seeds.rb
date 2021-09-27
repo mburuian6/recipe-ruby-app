@@ -9,6 +9,16 @@
 Comment.delete_all
 Post.delete_all
 
+users = User.create([
+    {
+    	email: default@user.com,
+    	name: default user,
+    	user_name: user,
+    	password: password,
+    	password_confirmation: password
+    }
+])
+
 Post.create([
     {
         title: 'super fast salmon and sweet potato fish cakes',
@@ -42,7 +52,7 @@ Post.create([
         4.
         Combine remaining sour cream in a bowl with lemon juice, cornichons and remaining dill. 
         Season. Serve fish cakes with dill sour cream, watercress and lemon wedges. ',
-        user: 2,
+        user: users.first,
         serves: 4
     },
 
@@ -87,7 +97,7 @@ Post.create([
         Simmer for 5 mins, then sprinkle with the toasted almonds. 
         Serve with rice, naan bread, chutney, coriander and lime wedges, if you like.
         ',
-        user:2,
+        user: users.first,
         serves: 4
     }
 ])
