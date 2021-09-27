@@ -17,12 +17,12 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create post" do
     assert_difference('Post.count') do
-      post posts_url, params: { post: { ingredients: @post.ingredients, procedure: @post.procedure, title: @post.title, user: @post.user } }
+      post posts_url, params: { post: { ingredients: @post.ingredients, procedure: @post.procedure, title: @post.title.downcase, serves: @post.serves } }
     end
 
-    assert_redirected_to post_url(Post.last)
+    assert_redirected_to display_posts_url
   end
-
+  
   test "should show post" do
     get post_url(@post)
     assert_response :success
@@ -34,7 +34,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update post" do
-    patch post_url(@post), params: { post: { ingredients: @post.ingredients, procedure: @post.procedure, title: @post.title, user: @post.user } }
+    patch post_url(@post), params: { post: { ingredients: @post.ingredients, procedure: @post.procedure, title: @post.title.downcase, serves: @post.serves } }
     assert_redirected_to post_url(@post)
   end
 

@@ -6,11 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Comment.delete_all
 Post.delete_all
 
 Post.create([
     {
-        title: 'Super fast salmon and sweet potato fish cakes',
+        title: 'super fast salmon and sweet potato fish cakes',
         ingredients: '
         2 small (about 500g) sweet potatoes, unpeeled
         250g fresh breadcrumbs
@@ -41,12 +42,12 @@ Post.create([
         4.
         Combine remaining sour cream in a bowl with lemon juice, cornichons and remaining dill. 
         Season. Serve fish cakes with dill sour cream, watercress and lemon wedges. ',
-        user: 0,
+        user: 2,
         serves: 4
     },
 
     {
-        title: 'Easy butter chicken',
+        title: 'easy butter chicken',
         ingredients: '    
         500g skinless boneless chicken thighs
 
@@ -86,7 +87,7 @@ Post.create([
         Simmer for 5 mins, then sprinkle with the toasted almonds. 
         Serve with rice, naan bread, chutney, coriander and lime wedges, if you like.
         ',
-        user:0,
+        user:2,
         serves: 4
     }
 ])
