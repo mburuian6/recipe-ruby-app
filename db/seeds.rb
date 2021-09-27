@@ -11,11 +11,11 @@ Post.delete_all
 
 users = User.create([
     {
-    	email: default@user.com,
-    	name: default user,
-    	user_name: user,
-    	password: password,
-    	password_confirmation: password
+    	email: 'default@gmail.com',
+    	name: 'default user',
+    	user_name: 'user',
+    	password: 'password',
+    	password_confirmation: 'password'
     }
 ])
 
