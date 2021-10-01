@@ -1,15 +1,6 @@
 link user to user page:
- - make post reference user //done
- - make comment reference user //done
- - take logged_in user and append to created recipe //done
- - take logged_in user and append to created comments //done
- - add columns - user_name //done
- - display user_name on the recipe //done
- - link recipe to user //done
- - list all recipes under the user //done
  - list all comments under the user 
- - link comment to user //done
- - link logged in username to user //done
+
 
 only edit if owner:
  1. post //done
