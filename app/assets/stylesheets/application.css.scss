@@ -4,7 +4,9 @@
 
 @import 'trix/dist/trix.css';
 @import 'actiontext';
- 
+
+@import "./actiontext.scss";
+
 .title-container {
     display: flex;
     justify-content: space-between;
