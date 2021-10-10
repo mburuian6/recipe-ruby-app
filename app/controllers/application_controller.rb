@@ -1,7 +1,8 @@
 require 'action_text'
 
 class ApplicationController < ActionController::Base
-  helpers ActionText::Engine.helpers
+  helper ActionText::Engine.helpers
+
   before_action :authenticate_user!
 
   protect_from_forgery with: :exception
