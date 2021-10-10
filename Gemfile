@@ -73,8 +73,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #active-record
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 
-#whenever
-gem 'whenever', require: false
+
 
 
 
