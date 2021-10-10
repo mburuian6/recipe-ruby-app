@@ -7,10 +7,8 @@ class CommentsController < ApplicationController
         params[:post_id]
     )
     
-    comment_hash = comment_params
-    comment_hash[:user] = current_user
-    
-    @comment = @post.comments.create( comment_hash )
+        
+    @comment = @post.comments.create( comment_params.merge(user_id: current_user.id))
     
     redirect_to post_path(@post)
   end

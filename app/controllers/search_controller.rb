@@ -6,7 +6,8 @@ class SearchController < ApplicationController
     begin
       search_term = params[:title]
       search_term = search_term.downcase
-      search_result = Post.where(
+      search_result = Post
+      .where(
         "title like ?", "%"+ search_term +"%"
       )
       

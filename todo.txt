@@ -2,11 +2,16 @@ link user to user page:
  - list all comments under the user 
 
 
-only edit if owner:
- 1. post //done
- 2. comment //delete:done, edit:pending
- 3. user //done
+3.capture user
+
 
 //TESTS
 Comment tests
 User tests
+
+
+Session_store: config/init../session_store
+
+
+
+

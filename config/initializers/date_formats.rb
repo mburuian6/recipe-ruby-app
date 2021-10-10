@@ -1,0 +1,1 @@
+Date::DATE_FORMATS[:date_month_year] = '%d - %B - %Y'

@@ -7,8 +7,8 @@ class SearchResultsController < ApplicationController
     @posts = []
 
     @search_result.each do |_result|
-      @post = Post.new(_result)
-      @posts << @post 
+      # @post = Post.new(_result)
+      @posts << _result
     end
     
   end

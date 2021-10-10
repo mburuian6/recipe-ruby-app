@@ -59,6 +59,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def unknown_url
+    redirect_to display_posts_url, notice: "Unknown url. Redirected to home..." 
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post

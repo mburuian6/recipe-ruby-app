@@ -80,4 +80,7 @@ Rails.application.configure do
     port: 3000
   }
 
+  #cache store
+  
+
 end

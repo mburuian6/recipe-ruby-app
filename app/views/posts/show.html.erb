@@ -1,54 +1,64 @@
----------------- <br>
-<p>
-  <strong>Posted by:</strong><%= @post.user.user_name %>
-</p>
------------------- <br>
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<div class="col-md-12">
+  <h4><small>POST DETAILS</small></h4>
+  <hr>
+  <h2><%= @post.title %></h2>
+  <h5>
+    <span class="glyphicon glyphicon-time"></span> 
+    Post by <%= link_to @post.user.user_name , 
+              user_details_show_path(user: @post.user) %>, 
+              <%= @post.updated_at.to_formatted_s(:long) %>
+  </h5>
+  <strong>Serves:</strong><%= @post.serves %>
+  <!--
+  <h5>
+    <span class="label label-danger">Food</span> 
+    <span class="label label-primary">Ipsum</span>
+  </h5>
+  -->
+  <br>
 
-<p>
-  <strong>Ingredients:</strong>
-  <%= @post.ingredients %>
-</p>
+  <p>
+    <strong>Ingredients:</strong>
+    <%= @post.ingredients %>
+  </p>
 
-<p>
-  <strong>Procedure:</strong>
-  <%= @post.procedure %>
-</p>
+  <p>
+    <strong>Procedure:</strong>
+    <%= @post.procedure %>
+  </p>
 
-<p>
-  <strong>Serves:</strong>
-  <%= @post.serves %>
-</p>
+  <br><br>
 
+  <% if is_owner(@post) %>
+    <button class="btn btn-default">
+      <%= link_to 'Edit Post', edit_post_path(@post) %> 
+    </button>
+    <button class="btn btn-default">
+      <%= link_to 'Destroy Post', 
+        @post, method: :delete, 
+        data: { confirm: 'Are you sure?' } %>
+    </button>
+  <% end %>
+</div>
 
-<% if is_owner(@post) %>
-  <%= link_to 'Edit', edit_post_path(@post) %> |
-  <td><%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-<% end %>
+<!-- Comments -->
 
-  
-
-<%= link_to 'Home', posts_path %>
-<%= link_to 'Search Post', search_path %> <br/>
---------------------------------
-
-<h2> Comments </h2>
-What do you think?
+<h4> Comments </h4>
 <%= render 'comments/form' %>
-
 
 <% @post.comments.each do |comment| %>
   <p>
-    <%= link_to comment_user_name(comment.user_id) , user_details_show_path(user: comment.user) %> - 
-    <%= comment.body %> - 
+    <%# <%= link_to comment_user_name(comment.user_id),  %>
+      <%# user_details_show_path(user: comment.user) %> 
+
+    <%= comment.body %>
+
     <% if is_owner(comment) %>
       <%= link_to 'Destroy Comment', 
       post_comment_path(@post,comment), method: :delete, 
       data: { confirm: 'Are you sure?' } %>
     <% end %>
+    
   </p>
 <% end %>
 

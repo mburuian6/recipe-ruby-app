@@ -4,4 +4,7 @@ class Post < ApplicationRecord
 
   has_many :comments, dependent: :destroy
   belongs_to :user
+
+  has_rich_text :ingredients
+  has_rich_text :procedure
 end

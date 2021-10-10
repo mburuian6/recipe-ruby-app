@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get 'user_details/show'
   root 'posts#index', as: 'display_posts'
+  
 
   devise_for :users
   get 'search_results/index'
@@ -18,4 +19,8 @@ Rails.application.routes.draw do
     resources :comments 
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  match "*path" => "posts#unknown_url", via: [:get, :post] 
+  # unless Rails.env.development?
+
 end
