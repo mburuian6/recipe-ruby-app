@@ -2,6 +2,8 @@ require 'action_text'
 
 class ApplicationController < ActionController::Base
   # helper ActionText::Engine.helpers
+  
+  befor_action: allow_iframe, only: [:index,:show,:new,:create,:edit,:update,:destroy]
 
   before_action :authenticate_user!
 
@@ -12,6 +14,10 @@ class ApplicationController < ActionController::Base
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :user_name, :name, :password])
       devise_parameter_sanitizer.permit(:account_update, keys: [:email, :user_name, :name, :password, :current_password])
+    end
+    
+    def allow_iframe
+      response.headers.delete "X-Frame-Options"
     end
 
 end
