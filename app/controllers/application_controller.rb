@@ -3,7 +3,7 @@ require 'action_text'
 class ApplicationController < ActionController::Base
   # helper ActionText::Engine.helpers
   
-  befor_action: allow_iframe, only: [:index,:show,:new,:create,:edit,:update,:destroy]
+  before_action: allow_iframe, only: [:index,:show,:new,:create,:edit,:update,:destroy]
 
   before_action :authenticate_user!
 
