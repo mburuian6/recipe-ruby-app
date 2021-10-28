@@ -34,15 +34,15 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
   port: 5432
-  username: blog_dev
+  username: dev
   password: password
 
 development:
   <<: *default
-  database: recipe_dev
+  database: recipe_app
   host: localhost
   port: 5432
-  username: depot_dev
+  username: dev
   password: password
 
 test:
