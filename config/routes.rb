@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   get 'user_details/show'
   root 'posts#index', as: 'display_posts'
-  
+
+  post '/', to: 'posts#index'
 
   devise_for :users
   get 'search_results/index'
