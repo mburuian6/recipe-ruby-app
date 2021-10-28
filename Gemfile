@@ -18,14 +18,11 @@ gem 'bootstrap-sass', '~> 3.4.1'
 gem 'rack-cors'
 
 #capistrano
-gem 'capistrano', '~> 3.11', require: false
-gem 'capistrano-rails', '~> 1.4', require: false
-gem 'capistrano-passenger', '~> 0.2.0'
-gem 'capistrano-rvm', require: false
-gem 'capistrano-rbenv', '~> 2.1'
+gem 'capistrano',         require: false
+gem 'capistrano-rvm',     require: false
+gem 'capistrano-rails',   require: false
 gem 'capistrano-bundler', require: false
 gem 'capistrano3-puma',   require: false
-gem "capistrano-db-tasks"
 
 #END
 
