@@ -25,9 +25,6 @@ set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true
 
-#ADDITIONAL
-set :default_shell, "/bin/bash -l"
-# END
 
 namespace :puma do
   desc 'Create Directories for Puma Pids and Socket'
