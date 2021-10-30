@@ -73,6 +73,19 @@ namespace :deploy do
   # after  :finishing,    :restart
 end
 
+#ADDITIONAL
+namespace :config do
+  task :symlink do
+    on roles(:app) do
+      execute :ln, "-s #{shared_path}/master.key #{release_path}/config/master.key"
+    end
+  end
+end
+
+after 'deploy:symlink:shared', 'config:symlink'
+#END
+
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
