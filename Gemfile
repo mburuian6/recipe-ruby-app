@@ -24,6 +24,8 @@ gem 'capistrano-rails',   require: false
 gem 'capistrano-bundler', require: false
 gem 'capistrano3-puma',   require: false
 
+#deploy
+gem 'sshkit-sudo'
 #END
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
