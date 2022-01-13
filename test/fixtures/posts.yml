@@ -1,15 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: mystring
-  ingredients: MyText
-  procedure: MyText
+  title: one
+  ingredients: my_ingredients
+  procedure: my_procedures
   user: 0
   serves: 1
 
-two:
-  title: mystring
-  ingredients: MyText
-  procedure: MyText
+ruby:
+  title: two
+  ingredients: my_ingredients
+  procedure: my_procedures
   user: 0
   serves: 1
