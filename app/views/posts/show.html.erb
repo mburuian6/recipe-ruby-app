@@ -31,7 +31,7 @@
 
   <% if is_owner(@post) %>
     <button class="btn btn-default">
-      <%= link_to 'Edit Post', edit_post_path(@post) %> 
+      <%= link_to 'Edit Post', [ :edit, @post ] %>
     </button>
     <button class="btn btn-default">
       <%= link_to 'Destroy Post', 
@@ -48,17 +48,16 @@
 
 <% @post.comments.each do |comment| %>
   <p>
-    <%# <%= link_to comment_user_name(comment.user_id),  %>
-      <%# user_details_show_path(user: comment.user) %> 
-
-    <%= comment.body %>
+    <%= link_to comment_user_name(comment.user_id), user_details_show_path(user: comment.user_id) %>
+    <%= ">> #{comment.body}" %>
 
     <% if is_owner(comment) %>
-      <%= link_to 'Destroy Comment', 
-      post_comment_path(@post,comment), method: :delete, 
-      data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'x',
+                  post_comment_path(@post,comment),
+                  method: :delete,
+                  data: { confirm: 'Are you sure you want to delete this comment?' },
+                  class: "btn btn-default " %>
     <% end %>
-    
   </p>
 <% end %>
 
