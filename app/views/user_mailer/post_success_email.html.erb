@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body>
+<h1> Hey <%= @user.name.split(' ').first %>, Check out your new post!</h1>
+<p>
+  Your post was successful with title '<%= @post.title %>'.
+  Your username is: <%= @user.user_name %>.<br>
+</p>
+<p>
+  To login to the site and view, just follow this link: <%= @url %>.
+</p>
+<p>Thanks for joining and have a great day!</p>
+<p><%= image_tag attachments['welcome.jpeg'].url %></p>
+
+<p>Best wishes.</p>
+
+<hr/>
+<small>
+  This email is sent after posting to our site with a message subject " <%= message.subject %>".<br/>
+  It is intended for: <%= link_to @user.name, @user.email %>
+</small>
+
+</body>
+</html>
