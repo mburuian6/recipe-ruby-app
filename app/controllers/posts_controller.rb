@@ -28,6 +28,7 @@ class PostsController < ApplicationController
     @post.title = @post.title.downcase
     respond_to do |format|
       if @post.save
+        UserMailer.with(post: @post, user: current_user).post_success_email.deliver_later
         format.html { redirect_to display_posts_url, notice: "Post was successfully created." }
         format.json { render :show, status: :created, location: @post }
       else
