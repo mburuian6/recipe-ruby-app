@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'user_details/show'
   root 'posts#index', as: 'display_posts'
 
+  get 'user_details/show'
   post '/', to: 'posts#index'
 
   devise_for :users
@@ -14,14 +14,13 @@ Rails.application.routes.draw do
     post 'search' => :create 
   end
 
-  
-
   resources :posts do
-    resources :comments 
+    resources :comments, except: %i[show index edit update post]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  match "*path" => "posts#unknown_url", via: [:get, :post] 
+
+  match '*path' => 'posts#unknown_url', via: %i[get post], status: 302
   # unless Rails.env.development?
 
 end
