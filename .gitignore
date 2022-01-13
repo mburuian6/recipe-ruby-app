@@ -41,3 +41,11 @@ yarn-debug.log*
 
 #token
 token.xml
+
+#db config
+config/database.yml
+
+#Rubymine files
+.idea/*
+.idea/radiant-retreat-97707.iml
+*.iml
