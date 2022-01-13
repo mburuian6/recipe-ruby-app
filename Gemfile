@@ -32,6 +32,7 @@ gem 'sshkit-sudo'
 gem 'rspec-rails', '~> 5.0.0'
 gem 'rspec'
 
+gem 'mail'
 #END
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
