@@ -49,3 +49,8 @@ config/database.yml
 .idea/*
 .idea/radiant-retreat-97707.iml
 *.iml
+
+#SSH keys
+*.pub
+github_ssh
+ssh_key
