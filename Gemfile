@@ -26,6 +26,12 @@ gem 'capistrano3-puma',   require: false
 
 #deploy
 gem 'sshkit-sudo'
+
+#TESTING
+#rspec
+gem 'rspec-rails', '~> 5.0.0'
+gem 'rspec'
+
 #END
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
